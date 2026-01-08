@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENIC FASHION | Affordable Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <img src="logo.jpg" alt="Renic Fashion Logo" class="splash-logo">
+            <h1 class="splash-text">RENIC FASHION</h1>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Renic Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Collection</a></li>
+        </ul>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Elegance is an Attitude</h1>
+            <p>Discover luxury textiles tailored for you.</p>
+            <a href="#products" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>RENIC FASHION</strong> একটি বাংলাদেশী ফ্যাশন ব্র্যান্ড, যেখানে আমরা বিশ্বাস করি লাক্সারি মানেই অতিরিক্ত খরচ নয়। আমাদের লক্ষ্য হলো বাংলাদেশের মানুষের কাছে সাশ্রয়ী মূল্যে প্রিমিয়াম এবং লাক্সারিয়াস টেক্সটাইল ও ফ্যাশন পণ্য পৌঁছে দেওয়া।</p>
+                    <p>আমরা গুণমানে আপোষহীন এবং স্টাইলে অনন্য। আমাদের প্রতিটি সুতা এবং ডিজাইন আপনার আভিজাত্য ফুটিয়ে তোলার জন্য তৈরি।</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1000&auto=format&fit=crop" alt="Fashion Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title">Exclusive Collection</h2>
+            <div class="product-grid" id="product-container">
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="logo.jpg" alt="Renic Logo" class="footer-logo">
+            <p>&copy; 2026 RENIC FASHION. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="cart-total">৳0</span></div>
+            <button class="btn-primary" onclick="openCheckout()">Checkout</button>
+        </div>
+    </div>
+    <div class="overlay" onclick="toggleCart()"></div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCheckout()">&times;</span>
+            <h2>Secure Checkout</h2>
+            <form id="checkout-form" onsubmit="processPayment(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" required placeholder="Dhaka, Bangladesh">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" required placeholder="+8801...">
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select>
+                        <option value="bkash">bKash</option>
+                        <option value="nagad">Nagad</option>
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
